@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+# Martin Gurasvili - Digital Portfolio 2025
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive portfolio showcasing AI/ML engineering projects, work experience, and technical skills.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Cosmic Orbital Background**: Custom-built canvas animation with particle effects and orbital rings
+- **Smooth Animations**: Framer Motion and GSAP for fluid transitions
+- **Responsive Design**: Optimized for all devices
+- **Dynamic Content**: Projects, work experience, tech stack, and certifications
+- **Performance Optimized**: Pre-generated textures and efficient rendering
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 18
+- **Animations**: Framer Motion, GSAP
+- **Styling**: CSS3 with custom properties
+- **Icons**: React Icons
+- **Canvas**: HTML5 Canvas API for custom graphics
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Installation
 
-### `npm test`
+```bash
+# Install dependencies
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Start development server
+npm start
 
-### `npm run build`
+# Build for production
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🌐 Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### GitHub Pages Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Update `package.json` with your GitHub Pages URL:
+```json
+{
+  "homepage": "https://yourusername.github.io/repository-name"
+}
+```
 
-### `npm run eject`
+2. Install gh-pages:
+```bash
+npm install --save-dev gh-pages
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Add deployment scripts to `package.json`:
+```json
+{
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  }
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Deploy:
+```bash
+npm run deploy
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Vercel Deployment
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Install Vercel CLI:
+```bash
+npm install -g vercel
+```
 
-## Learn More
+2. Deploy:
+```bash
+vercel
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Netlify Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Build the project:
+```bash
+npm run build
+```
 
-### Code Splitting
+2. Drag and drop the `build` folder to Netlify or use Netlify CLI:
+```bash
+netlify deploy --prod --dir=build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📁 Project Structure
 
-### Analyzing the Bundle Size
+```
+portfolio-react/
+├── public/
+│   ├── img/              # Tech stack and company logos
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/       # React components
+│   │   ├── About.js
+│   │   ├── Contact.js
+│   │   ├── Hero.js
+│   │   ├── Navbar.js
+│   │   ├── OrbitalBackground.js
+│   │   ├── Services.js
+│   │   ├── TechStack.js
+│   │   ├── Works.js
+│   │   └── ...
+│   ├── App.js           # Main app component
+│   ├── App.css
+│   └── index.js
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎨 Customization
 
-### Making a Progressive Web App
+### Update Personal Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. **Contact Details**: Edit `src/components/Contact.js`
+2. **Work Experience**: Edit `src/components/Works.js`
+3. **Tech Stack**: Edit `src/components/TechStack.js`
+4. **Projects**: Edit `src/components/Works.js`
+5. **About**: Edit `src/components/About.js`
 
-### Advanced Configuration
+### Update Colors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Edit CSS custom properties in `src/App.css`:
+```css
+:root {
+  --bg-primary: #000000;
+  --text-primary: #ffffff;
+  --accent-color: #06b6d4;
+  --accent-purple: #7c3aed;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+```
 
-### Deployment
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+© 2025 Martin Gurasvili. All rights reserved.
 
-### `npm run build` fails to minify
+## 🤝 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Email**: contact@martingurasvili.com
+- **GitHub**: [@MartinGurasvili](https://github.com/MartinGurasvili)
+- **LinkedIn**: [Martin Gurasvili](https://linkedin.com/in/martin-gurasvili)

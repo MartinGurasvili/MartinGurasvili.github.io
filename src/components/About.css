@@ -1,0 +1,99 @@
+.about {
+  position: relative;
+}
+
+.about-content {
+  display: grid;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.about-text {
+  max-width: 100%;
+}
+
+.about-text .word {
+  display: inline-block;
+  margin-right: 0.3em;
+  opacity: 0.3;
+}
+
+.about-intro {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 800px;
+}
+
+.about-intro strong {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.about-intro p {
+  margin-bottom: 1rem;
+}
+
+.tech-stack {
+  margin-top: 3rem;
+}
+
+.tech-stack h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-icon svg {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.tech-icon span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover svg {
+  color: var(--accent-color);
+  transform: translateY(-5px) scale(1.1);
+}
+
+.tech-icon:hover span {
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    gap: 2rem;
+  }
+  
+  .tech-icons {
+    gap: 1.5rem;
+  }
+  
+  .tech-icon svg {
+    font-size: 2rem;
+  }
+}

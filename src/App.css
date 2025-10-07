@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --text-secondary: #999999;
+  --accent-color: #06b6d4; /* Cyan from gradient */
+  --accent-secondary: #7c3aed; /* Purple from gradient */
+  --accent-tertiary: #3b82f6; /* Blue from gradient */
+  --border-color: #222222;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  position: relative;
   min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 10;
+}
+
+/* Ensure all content is above the orbital background */
+nav,
+section,
+footer,
+.menu-overlay {
+  position: relative;
+  z-index: 10;
+}
+
+/* Section Styles */
+section {
+  padding: 6rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: baseline;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.section-number {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.large-text {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.cta-link {
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--text-color);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--text-color);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.cta-link:hover::before {
+  left: 0;
+}
+
+.cta-link:hover {
+  color: var(--bg-color);
+  border-color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  section {
+    padding: 5rem 2rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* Performance optimizations - but not for scrollable content */
+body * {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Fixed elements need proper positioning */
+.navbar,
+.orbital-background,
+.gradient-background,
+.custom-cursor,
+.back-to-top,
+.menu-overlay {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+/* Hide cursor on mobile */
+@media (max-width: 1023px) {
+  .custom-cursor {
+    display: none !important;
   }
 }

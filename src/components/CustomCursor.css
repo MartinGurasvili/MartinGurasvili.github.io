@@ -1,0 +1,24 @@
+.custom-cursor {
+  position: fixed;
+  border: 1px solid var(--text-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+@media (max-width: 1023px) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+  body,
+  a,
+  button,
+  .work-item {
+    cursor: none;
+  }
+}

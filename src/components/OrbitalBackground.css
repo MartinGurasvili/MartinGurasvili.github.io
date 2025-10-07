@@ -1,0 +1,27 @@
+.orbital-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: #0a0a0a;
+}
+
+.orbital-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+/* Ensure content stays above the background */
+@media (max-width: 768px) {
+  .orbital-canvas {
+    opacity: 0.8;
+  }
+}
