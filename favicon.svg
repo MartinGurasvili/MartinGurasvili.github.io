@@ -1,18 +1,20 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="100" height="100" fill="#000000"/>
+  <!-- Transparent background - removed solid black rect -->
   
-  <!-- Outer orbital ring -->
-  <circle cx="50" cy="50" r="40" fill="none" stroke="url(#gradient1)" stroke-width="1" opacity="0.6"/>
+  <!-- Outer orbital ring with stronger colors -->
+  <circle cx="50" cy="50" r="40" fill="none" stroke="url(#gradient1)" stroke-width="2" opacity="0.8"/>
   
-  <!-- Inner orbital ring -->
-  <circle cx="50" cy="50" r="30" fill="none" stroke="url(#gradient2)" stroke-width="1" opacity="0.4"/>
+  <!-- Inner orbital ring with stronger colors -->
+  <circle cx="50" cy="50" r="30" fill="none" stroke="url(#gradient2)" stroke-width="2" opacity="0.6"/>
   
-  <!-- Center circle with gradient -->
+  <!-- Center circle with more opaque gradient -->
   <circle cx="50" cy="50" r="20" fill="url(#centerGradient)"/>
   
-  <!-- Orbiting particle 1 -->
-  <circle cx="50" cy="10" r="2.5" fill="#06b6d4">
+  <!-- Dark outline for visibility on light backgrounds -->
+  <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+  
+  <!-- Orbiting particle 1 with glow effect -->
+  <circle cx="50" cy="10" r="3" fill="#06b6d4" filter="url(#glow)">
     <animateTransform
       attributeName="transform"
       type="rotate"
@@ -23,8 +25,8 @@
     />
   </circle>
   
-  <!-- Orbiting particle 2 -->
-  <circle cx="50" cy="20" r="2" fill="#7c3aed">
+  <!-- Orbiting particle 2 with glow effect -->
+  <circle cx="50" cy="20" r="2.5" fill="#7c3aed" filter="url(#glow)">
     <animateTransform
       attributeName="transform"
       type="rotate"
@@ -35,20 +37,28 @@
     />
   </circle>
   
-  <!-- Gradients -->
+  <!-- Gradients and Effects -->
   <defs>
     <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="1"/>
     </linearGradient>
     <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.6"/>
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.8"/>
     </linearGradient>
     <radialGradient id="centerGradient">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.4"/>
-      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0.9"/>
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.9"/>
     </radialGradient>
+    <!-- Glow effect for particles -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
 </svg>
